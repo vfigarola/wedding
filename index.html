@@ -8,16 +8,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #FBFAF6;
-    --ink: #2B3630;
-    --ink-soft: #6E7D72;
-    --sage: #5C7A63;
-    --sage-deep: #3C5245;
+    --bg: #FBFCFE;
+    --ink: #26333D;
+    --ink-soft: #64798A;
     --blue: #A9CCEB;
+    --blue-deep: #4A7A9E;
+    --sage: #5C7A63;
     --gold: #B8912E;
-    --pale: #E9F1E6;
+    --pale: #E9F2FA;
     --card: #FFFFFF;
-    --line: rgba(43,54,48,0.16);
+    --line: rgba(38,51,61,0.16);
   }
   * { box-sizing: border-box; }
   body {
@@ -36,7 +36,7 @@
 
   /* ---- Hero ---- */
   .hero {
-    background: var(--sage-deep);
+    background: var(--blue-deep);
     color: var(--bg);
     padding: 56px 0 40px;
   }
@@ -65,7 +65,7 @@
   .hero p.sub {
     margin-top: 8px;
     font-size: 15px;
-    color: var(--blue);
+    color: #E4F0FA;
     font-family: 'Inter', sans-serif;
   }
   .dates-row {
@@ -102,8 +102,8 @@
     border-bottom: 2px solid transparent;
   }
   nav.tabs button.active {
-    color: var(--sage);
-    border-bottom-color: var(--sage);
+    color: var(--blue-deep);
+    border-bottom-color: var(--blue-deep);
   }
 
   section.panel { display: none; padding: 40px 0 80px; }
@@ -153,7 +153,7 @@
     padding: 26px 28px;
     margin-bottom: 32px;
   }
-  .banner .kicker { font-size: 13px; color: var(--sage); font-weight: 500; }
+  .banner .kicker { font-size: 13px; color: var(--blue-deep); font-weight: 500; }
   .banner h2 { font-size: 26px; margin-top: 6px; }
   .banner .loc { margin-top: 8px; font-size: 14.5px; color: var(--ink-soft); }
 
@@ -171,9 +171,9 @@
     cursor: pointer;
   }
   .day-tabs button.active {
-    background: var(--sage);
+    background: var(--blue-deep);
     color: var(--bg);
-    border-color: var(--sage);
+    border-color: var(--blue-deep);
   }
 
   .day-panel { display: none; }
@@ -194,9 +194,9 @@
     content: '';
     position: absolute; left: -4.5px; top: 4px;
     width: 8px; height: 8px; border-radius: 50%;
-    background: var(--sage);
+    background: var(--blue-deep);
   }
-  .t-item .time { font-family: 'Fraunces', serif; font-size: 17px; color: var(--sage-deep); }
+  .t-item .time { font-family: 'Fraunces', serif; font-size: 17px; color: var(--blue-deep); }
   .t-item .title { font-weight: 600; margin-top: 2px; font-size: 15px; }
   .t-item .desc { color: var(--ink-soft); font-size: 14px; margin-top: 3px; line-height: 1.5; }
 
