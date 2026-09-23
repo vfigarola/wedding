@@ -216,14 +216,6 @@
   .dresscode-row { display: flex; gap: 18px; align-items: flex-start; margin-top: 18px; }
   .dresscode-row .swatch { width: 30px; height: 30px; }
 
-  /* ---- Two-column timelines ---- */
-  .two-timelines {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-  }
-  .timeline-col { flex: 1 1 0; min-width: 0; }
-
   .rotation-table {
     width: 100%;
     border-collapse: collapse;
@@ -293,7 +285,6 @@
     .info-row .value { text-align: left; }
     .home-intro { flex-direction: column-reverse; }
     .collage { width: 100%; }
-    .two-timelines { flex-direction: column; gap: 36px; }
   }
 </style>
 </head>
@@ -465,59 +456,65 @@
       <div class="loc">December 3, 2027 · Lake Wales, FL</div>
     </div>
 
-    <div class="two-timelines">
-      <div class="timeline-col">
-        <h3 class="section-h">Day-of Timeline</h3>
-        <div class="timeline">
-          <div class="t-item"><div class="time">8:45 AM</div><div class="title">Arrive at venue</div><div class="desc">Bella Cosa.</div></div>
-          <div class="t-item"><div class="time">9:00 AM</div><div class="title">Doors open — hair + makeup begins</div><div class="desc">&nbsp;</div></div>
-          <div class="t-item"><div class="time">12:00 PM</div><div class="title">Photographer arrives</div><div class="desc">Photos commence shortly after.</div></div>
-          <div class="t-item"><div class="time">4:00 PM</div><div class="title">Ceremony</div><div class="desc">Outdoor terrace, 30 minutes.</div></div>
-          <div class="t-item"><div class="time">4:30 PM</div><div class="title">Cocktail hour</div><div class="desc">Indoor main room.</div></div>
-          <div class="t-item"><div class="time">5:30 PM</div><div class="title">Reception</div><div class="desc">Secondary indoor room.</div></div>
-          <div class="t-item"><div class="time">10:00 PM</div><div class="title">Sparkler send-off</div><div class="desc">&nbsp;</div></div>
-        </div>
-      </div>
+    <div class="day-tabs">
+      <button class="day-btn active" data-day="wtimeline">Timeline</button>
+      <button class="day-btn" data-day="whair">Hair &amp; Makeup</button>
+      <button class="day-btn" data-day="wdress">Dress Code</button>
+    </div>
 
-      <div class="timeline-col">
-        <h3 class="section-h">Hair &amp; Makeup Rotation</h3>
-        <div class="rotation-note" style="margin-top:0; margin-bottom:16px;">Order below is randomized — final order will be set closer to the wedding.</div>
-
-        <div style="font-weight:600; font-size:13.5px; margin-bottom:6px;">Makeup</div>
-        <table class="rotation-table">
-          <thead><tr><th>Time</th><th>Bridesmaid</th></tr></thead>
-          <tbody>
-            <tr><td>9:00 AM</td><td>Michi</td></tr>
-            <tr><td>9:45 AM</td><td>Janna</td></tr>
-            <tr><td>10:30 AM</td><td>Elizabeth</td></tr>
-            <tr><td>11:15 AM</td><td>Analisa</td></tr>
-            <tr><td>12:00 PM</td><td>Genesis</td></tr>
-            <tr><td>12:45 PM</td><td>Alexa</td></tr>
-          </tbody>
-        </table>
-
-        <div style="font-weight:600; font-size:13.5px; margin:22px 0 6px;">Hair</div>
-        <table class="rotation-table">
-          <thead><tr><th>Time</th><th>Bridesmaid</th></tr></thead>
-          <tbody>
-            <tr><td>9:00 AM</td><td>Janna</td></tr>
-            <tr><td>9:45 AM</td><td>Genesis</td></tr>
-            <tr><td>10:30 AM</td><td>Analisa</td></tr>
-            <tr><td>11:15 AM</td><td>Alexa</td></tr>
-            <tr><td>12:00 PM</td><td>Elizabeth</td></tr>
-            <tr><td>12:30 PM</td><td>Sydney <span style="color:var(--ink-soft); font-weight:400;">(2 artists working concurrently)</span></td></tr>
-            <tr><td>12:45 PM</td><td>Michi <span style="color:var(--ink-soft); font-weight:400;">(2 artists working concurrently)</span></td></tr>
-          </tbody>
-        </table>
+    <div class="day-panel active" id="wtimeline">
+      <h3 class="section-h">Day-of Timeline</h3>
+      <div class="timeline">
+        <div class="t-item"><div class="time">8:45 AM</div><div class="title">Arrive at venue</div><div class="desc">Bella Cosa.</div></div>
+        <div class="t-item"><div class="time">9:00 AM</div><div class="title">Doors open — hair + makeup begins</div><div class="desc">&nbsp;</div></div>
+        <div class="t-item"><div class="time">12:00 PM</div><div class="title">Photographer arrives</div><div class="desc">Photos commence shortly after.</div></div>
+        <div class="t-item"><div class="time">4:00 PM</div><div class="title">Ceremony</div><div class="desc">Outdoor terrace, 30 minutes.</div></div>
+        <div class="t-item"><div class="time">4:30 PM</div><div class="title">Cocktail hour</div><div class="desc">Indoor main room.</div></div>
+        <div class="t-item"><div class="time">5:30 PM</div><div class="title">Reception</div><div class="desc">Secondary indoor room.</div></div>
+        <div class="t-item"><div class="time">10:00 PM</div><div class="title">Sparkler send-off</div><div class="desc">&nbsp;</div></div>
       </div>
     </div>
 
-    <h3 class="section-h">Bridesmaid dress code</h3>
-    <div class="dresscode-row">
-      <div class="swatch" style="background:#A9C6DE"></div>
-      <div>
-        <div style="font-weight:600; font-size:15px;">Powder blue, floor length</div>
-        <div style="color:var(--ink-soft); font-size:14px; margin-top:3px;">Not super light blue, not dark/grey blue — that yummy in-between. See Azazie's <a href="https://www.azazie.com/all/bridesmaid-dresses/colors/powder-blue" style="color:var(--blue-deep);">powder blue</a> shade for reference. Any silhouette you feel best in — sizing deadline coming soon.</div>
+    <div class="day-panel" id="whair">
+      <h3 class="section-h">Hair &amp; Makeup Rotation</h3>
+      <div class="rotation-note" style="margin-top:0; margin-bottom:16px;">Order below is randomized — final order will be set closer to the wedding.</div>
+
+      <div style="font-weight:600; font-size:13.5px; margin-bottom:6px;">Makeup</div>
+      <table class="rotation-table">
+        <thead><tr><th>Time</th><th>Bridesmaid</th></tr></thead>
+        <tbody>
+          <tr><td>9:00 AM</td><td>Michi</td></tr>
+          <tr><td>9:45 AM</td><td>Janna</td></tr>
+          <tr><td>10:30 AM</td><td>Elizabeth</td></tr>
+          <tr><td>11:15 AM</td><td>Analisa</td></tr>
+          <tr><td>12:00 PM</td><td>Genesis</td></tr>
+          <tr><td>12:45 PM</td><td>Alexa</td></tr>
+        </tbody>
+      </table>
+
+      <div style="font-weight:600; font-size:13.5px; margin:22px 0 6px;">Hair</div>
+      <table class="rotation-table">
+        <thead><tr><th>Time</th><th>Bridesmaid</th></tr></thead>
+        <tbody>
+          <tr><td>9:00 AM</td><td>Janna</td></tr>
+          <tr><td>9:45 AM</td><td>Genesis</td></tr>
+          <tr><td>10:30 AM</td><td>Analisa</td></tr>
+          <tr><td>11:15 AM</td><td>Alexa</td></tr>
+          <tr><td>12:00 PM</td><td>Elizabeth</td></tr>
+          <tr><td>12:30 PM</td><td>Sydney <span style="color:var(--ink-soft); font-weight:400;">(2 artists working concurrently)</span></td></tr>
+          <tr><td>12:45 PM</td><td>Michi <span style="color:var(--ink-soft); font-weight:400;">(2 artists working concurrently)</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="day-panel" id="wdress">
+      <h3 class="section-h">Bridesmaid dress code</h3>
+      <div class="dresscode-row">
+        <div class="swatch" style="background:#A9C6DE"></div>
+        <div>
+          <div style="font-weight:600; font-size:15px;">Powder blue, floor length</div>
+          <div style="color:var(--ink-soft); font-size:14px; margin-top:3px;">Not super light blue, not dark/grey blue — that yummy in-between. See Azazie's <a href="https://www.azazie.com/all/bridesmaid-dresses/colors/powder-blue" style="color:var(--blue-deep);">powder blue</a> shade for reference. Any silhouette you feel best in — sizing deadline coming soon.</div>
+        </div>
       </div>
     </div>
   </section>
@@ -574,14 +571,16 @@
     });
   });
 
-  const dayBtns = document.querySelectorAll('.day-btn');
-  const dayPanels = document.querySelectorAll('.day-panel');
-  dayBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      dayBtns.forEach(b => b.classList.remove('active'));
-      dayPanels.forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById(btn.dataset.day).classList.add('active');
+  document.querySelectorAll('.day-tabs').forEach(group => {
+    const btns = group.querySelectorAll('.day-btn');
+    const panels = Array.from(btns).map(b => document.getElementById(b.dataset.day));
+    btns.forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        panels.forEach(p => p && p.classList.remove('active'));
+        btn.classList.add('active');
+        panels[i].classList.add('active');
+      });
     });
   });
 </script>
