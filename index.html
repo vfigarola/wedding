@@ -216,6 +216,47 @@
   .dresscode-row { display: flex; gap: 18px; align-items: flex-start; margin-top: 18px; }
   .dresscode-row .swatch { width: 30px; height: 30px; }
 
+  /* ---- Two-column timelines ---- */
+  .two-timelines {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+  }
+  .timeline-col { flex: 1 1 0; min-width: 0; }
+
+  .rotation-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  .rotation-table th {
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--ink-soft);
+    padding: 0 10px 8px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .rotation-table td {
+    padding: 10px 10px 10px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .rotation-table td:first-child {
+    font-family: 'Fraunces', serif;
+    color: var(--blue-deep);
+    white-space: nowrap;
+    width: 1%;
+  }
+  .rotation-table tr.milestone td {
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .rotation-note {
+    margin-top: 14px;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+  }
+
   /* ---- Committee cards ---- */
   .committee-card {
     background: var(--card);
@@ -252,6 +293,7 @@
     .info-row .value { text-align: left; }
     .home-intro { flex-direction: column-reverse; }
     .collage { width: 100%; }
+    .two-timelines { flex-direction: column; gap: 36px; }
   }
 </style>
 </head>
@@ -423,22 +465,59 @@
       <div class="loc">December 3, 2027 · Lake Wales, FL</div>
     </div>
 
-    <h3 class="section-h">Day-of Timeline</h3>
-    <div class="timeline">
-      <div class="t-item"><div class="time">10:00 AM</div><div class="title">Hair + makeup begins</div><div class="desc">Bridal suite, Bella Cosa. Times TBD.</div></div>
-      <div class="t-item"><div class="time">1:30 PM</div><div class="title">Photos — wedding party</div><div class="desc">Garden lawn, weather permitting.</div></div>
-      <div class="t-item"><div class="time">4:00 PM</div><div class="title">Ceremony</div><div class="desc">The Orchard, 20 minutes.</div></div>
-      <div class="t-item"><div class="time">4:30 PM</div><div class="title">Cocktail hour</div><div class="desc">Terrace.</div></div>
-      <div class="t-item"><div class="time">5:30 PM</div><div class="title">Reception + dinner</div><div class="desc">The Barn. Toasts right after dinner service.</div></div>
-      <div class="t-item"><div class="time">10:00 PM</div><div class="title">Send-off</div><div class="desc">Sparklers by the front gate.</div></div>
+    <div class="two-timelines">
+      <div class="timeline-col">
+        <h3 class="section-h">Day-of Timeline</h3>
+        <div class="timeline">
+          <div class="t-item"><div class="time">8:45 AM</div><div class="title">Arrive at venue</div><div class="desc">Bella Cosa.</div></div>
+          <div class="t-item"><div class="time">9:00 AM</div><div class="title">Doors open — hair + makeup begins</div><div class="desc">&nbsp;</div></div>
+          <div class="t-item"><div class="time">12:00 PM</div><div class="title">Photographer arrives</div><div class="desc">Photos commence shortly after.</div></div>
+          <div class="t-item"><div class="time">4:00 PM</div><div class="title">Ceremony</div><div class="desc">Outdoor terrace, 30 minutes.</div></div>
+          <div class="t-item"><div class="time">4:30 PM</div><div class="title">Cocktail hour</div><div class="desc">Indoor main room.</div></div>
+          <div class="t-item"><div class="time">5:30 PM</div><div class="title">Reception</div><div class="desc">Secondary indoor room.</div></div>
+          <div class="t-item"><div class="time">10:00 PM</div><div class="title">Sparkler send-off</div><div class="desc">&nbsp;</div></div>
+        </div>
+      </div>
+
+      <div class="timeline-col">
+        <h3 class="section-h">Hair &amp; Makeup Rotation</h3>
+        <div class="rotation-note" style="margin-top:0; margin-bottom:16px;">Order below is randomized — final order will be set closer to the wedding.</div>
+
+        <div style="font-weight:600; font-size:13.5px; margin-bottom:6px;">Makeup</div>
+        <table class="rotation-table">
+          <thead><tr><th>Time</th><th>Bridesmaid</th></tr></thead>
+          <tbody>
+            <tr><td>9:00 AM</td><td>Michi</td></tr>
+            <tr><td>9:45 AM</td><td>Janna</td></tr>
+            <tr><td>10:30 AM</td><td>Elizabeth</td></tr>
+            <tr><td>11:15 AM</td><td>Analisa</td></tr>
+            <tr><td>12:00 PM</td><td>Genesis</td></tr>
+            <tr><td>12:45 PM</td><td>Alexa</td></tr>
+          </tbody>
+        </table>
+
+        <div style="font-weight:600; font-size:13.5px; margin:22px 0 6px;">Hair</div>
+        <table class="rotation-table">
+          <thead><tr><th>Time</th><th>Bridesmaid</th></tr></thead>
+          <tbody>
+            <tr><td>9:00 AM</td><td>Janna</td></tr>
+            <tr><td>9:45 AM</td><td>Genesis</td></tr>
+            <tr><td>10:30 AM</td><td>Analisa</td></tr>
+            <tr><td>11:15 AM</td><td>Alexa</td></tr>
+            <tr><td>12:00 PM</td><td>Elizabeth</td></tr>
+            <tr><td>12:30 PM</td><td>Sydney <span style="color:var(--ink-soft); font-weight:400;">(2 artists working concurrently)</span></td></tr>
+            <tr><td>12:45 PM</td><td>Michi <span style="color:var(--ink-soft); font-weight:400;">(2 artists working concurrently)</span></td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <h3 class="section-h">Bridesmaid dress code</h3>
     <div class="dresscode-row">
-      <div class="swatch" style="background:#3C5245"></div>
+      <div class="swatch" style="background:#A9C6DE"></div>
       <div>
-        <div style="font-weight:600; font-size:15px;">Deep sage, floor length</div>
-        <div style="color:var(--ink-soft); font-size:14px; margin-top:3px;">Any silhouette you feel best in — dress link and sizing deadline coming in the Bridesmaid Dresses tab.</div>
+        <div style="font-weight:600; font-size:15px;">Powder blue, floor length</div>
+        <div style="color:var(--ink-soft); font-size:14px; margin-top:3px;">Not super light blue, not dark/grey blue — that yummy in-between. See Azazie's <a href="https://www.azazie.com/all/bridesmaid-dresses/colors/powder-blue" style="color:var(--blue-deep);">powder blue</a> shade for reference. Any silhouette you feel best in — sizing deadline coming soon.</div>
       </div>
     </div>
   </section>
