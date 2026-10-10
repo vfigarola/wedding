@@ -215,6 +215,8 @@
   /* ---- Dress code ---- */
   .dresscode-row { display: flex; gap: 18px; align-items: flex-start; margin-top: 18px; }
   .dresscode-row .swatch { width: 30px; height: 30px; }
+  .dress-options { margin: 0; padding-left: 20px; font-size: 14.5px; line-height: 1.9; }
+  .dress-options a { color: var(--blue-deep); }
 
   .rotation-table {
     width: 100%;
@@ -276,6 +278,41 @@
 
   footer { text-align: center; padding: 30px 0 50px; font-size: 12.5px; color: var(--ink-soft); }
 
+  /* ---- Locked tab ---- */
+  .lock-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 32px 28px;
+    max-width: 420px;
+  }
+  .lock-card h2 { font-size: 24px; }
+  .lock-card p { color: var(--ink-soft); font-size: 14.5px; line-height: 1.55; margin: 10px 0 20px; }
+  .lock-card form { display: flex; gap: 8px; }
+  .lock-card input {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--bg);
+    color: var(--ink);
+  }
+  .lock-card button {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    background: var(--blue-deep);
+    color: #fff;
+    cursor: pointer;
+  }
+  .lock-err { margin-top: 12px; font-size: 13.5px; color: #A04040; }
+
   @media (max-width: 560px) {
     .hero-inner { flex-direction: column; align-items: flex-start; }
     .monogram { width: 45%; }
@@ -309,7 +346,9 @@
     <button class="tab-btn active" data-tab="home">Home</button>
     <button class="tab-btn" data-tab="roles">Your Roles</button>
     <button class="tab-btn" data-tab="bach">Bachelorette</button>
+    <button class="tab-btn" data-tab="rehearsal">Rehearsal Dinner</button>
     <button class="tab-btn" data-tab="wedding">Wedding Day</button>
+    <button class="tab-btn" data-tab="night">Wedding Night</button>
   </div>
 </nav>
 
@@ -513,10 +552,59 @@
         <div class="swatch" style="background:#A9C6DE"></div>
         <div>
           <div style="font-weight:600; font-size:15px;">Powder blue, floor length</div>
-          <div style="color:var(--ink-soft); font-size:14px; margin-top:3px;">Not super light blue, not dark/grey blue — that yummy in-between. See Azazie's <a href="https://www.azazie.com/all/bridesmaid-dresses/colors/powder-blue" style="color:var(--blue-deep);">powder blue</a> shade for reference. Any silhouette you feel best in — sizing deadline coming soon.</div>
+          <div style="color:var(--ink-soft); font-size:14px; margin-top:3px;">Not super light blue, not dark/grey blue — that yummy in-between. Any silhouette you feel best in — sizing deadline coming soon.</div>
         </div>
       </div>
+
+      <h3 class="section-h">Dress options</h3>
+      <ul class="dress-options">
+        <li><a href="https://www.azazie.com/all/bridesmaid-dresses/colors/powder-blue">Azazie — Powder Blue</a></li>
+        <li><a href="https://www.lulus.com/products/romantically-speaking-powder-blue-cowl-lace-up-maxi-dress/2790851.html">Lulus — Romantically Speaking Powder Blue Cowl Lace-Up Maxi Dress</a></li>
+      </ul>
     </div>
+  </section>
+
+  <!-- REHEARSAL DINNER -->
+  <section class="panel" id="rehearsal">
+    <div class="banner">
+      <div class="kicker">The Night Before</div>
+      <h2>Rehearsal + Dinner</h2>
+      <div class="loc">Thursday, December 2, 2027 · Location TBD · Details are tentative</div>
+    </div>
+
+    <h3 class="section-h">The plan</h3>
+    <div class="timeline">
+      <div class="t-item"><div class="time">~4:30 PM</div><div class="title">Arrive at the location</div><div class="desc">If it's not at our Airbnb, please be there at least 30 minutes before the rehearsal starts.</div></div>
+      <div class="t-item"><div class="time">~5:00 PM</div><div class="title">Rehearsal</div><div class="desc">A 1-hour run-through.</div></div>
+      <div class="t-item"><div class="time">After rehearsal</div><div class="title">Dinner + drinks</div><div class="desc">Dinner and drinks are on us. Photographer will be there taking pictures throughout the night.</div></div>
+    </div>
+
+    <h3 class="section-h">Who's invited</h3>
+    <ul class="dress-options">
+      <li>Bridal party + their guests</li>
+      <li>Groomsmen + their guests</li>
+      <li>Victoria and Dylan's parents</li>
+    </ul>
+
+    <h3 class="section-h">Dress code</h3>
+    <div class="outfit-card">
+      <div class="vibe">Chic-casual</div>
+      <div class="desc">Polished but relaxed. Think a cutesy dress or pants + a cute top, nothing too formal.</div>
+    </div>
+  </section>
+
+  <!-- WEDDING NIGHT (passcode protected, contents encrypted) -->
+  <section class="panel" id="night">
+    <div class="lock-card" id="night-lock">
+      <h2 class="display">Wedding Night</h2>
+      <p>This tab is for guests staying at the venue. Enter the passcode to see room details.</p>
+      <form id="night-form">
+        <input type="password" id="night-pass" placeholder="Passcode" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false">
+        <button type="submit">Unlock</button>
+      </form>
+      <div class="lock-err" id="night-err" hidden>That passcode didn't work. Try again.</div>
+    </div>
+    <div id="night-content" hidden></div>
   </section>
 
   <!-- YOUR ROLES -->
@@ -583,6 +671,60 @@
       });
     });
   });
+</script>
+
+<script>
+  (function () {
+    const PAYLOAD = "a5DfX92AyYrPnZagz6TQ2MaODTkzRyfrU1XoDLijR6OK/yKipDAH9G6MlnuPixZw7tLxUD8HK+YFCWsN9jaCJVZJ6lydNJN0ITEQwdjXcyE1fA22HVSLSu5XM4ozHNdjCj2vQVEM0uMcuwBb8/jhLWH+HumoVKdKAet64nA5iXaaqRKYEMNpS9OFkfFF/83KTeVlQgo/GbFiJp/OxYGF24f9kZ0HJxjiKawgtelLMW6H1ZdqeBYRHs8GxwaOlHlP3UiBndXdHArSCDi+PA3CkfwwBkVYh5myjmMyATbo3EQQUngzMxE14upzmEEL/7j30SF2uDNZYEtZoXcD3vpT5lorppaFt6XLMvU/IqmlJJ3/jGAGkhAYaABOM1n4nS3foj+xlp+WCQb8uXxbFxetFnsflbPDJ7vvLfhl/0wbKg5vGB3S3lKijZEmTpYxHe3AW2IYgioGaOo91qCNxGEgMUraJN7SDURv63vWtBkyDveSpv3Ph6M78vq+TkAk99JQIWfHCpmPHCJDgxWU9tXZced5ecKv6id4GnZnODnT1mgsPtPW3kXTbw6f8NO1YQxocyNFX6bWaGBV5Sdma+UbhUBczDW6vcMoGxxQNt5MBZEAYogaJWVuJXde+Vg3jAGIu2XWw9pQAQOzYo/Ud+m1wir8F9pnnKVQHyz4SHeEvZi/JdDVEedvxdXjKcGgUNq4iuZE45P4AjE0TsB6mECD6hk891BaIeb3FJLGEQzb9hNc+2zagl8n53akyQ4Xe30GNwMVlxAsmPpzxEI44ucRcCOwUQxrIJF3CrOmkHkWz3lf1zeB297/qN5lP9uGbOOhnEyS8axUPcmmfQodnXFHkEbAt32DmP930FOLqEYAjGRqOWooXA02p54aL0L1+ndiGIyfXnp3BtjNQgiRwfXpjwijmCL3p9vR3MiGC8ksaSxwYPquJPO0GvDixfJBtdGj4hsv2iE2qKM7ckvVh0sJm5GUfbbAAT8tKyh/eU/1cJUCOWO3uurdShcZzkMFxK7KvpUuz4iYSbpbFu6PLEdbHBTxNkBDu8eOzFwX/B1Y3unh4YXi+SumIzZQfQZe3WkAYtstJW6drlw0AsK5E1LMxlBcq7L3Jq66RuiOfPp88+ehGbtl6RvwLpc7Tj8tdegcG3nqcfvd62qFUZI4TEHrtSFKHXsOeV+t4E6XVcUs3mgSWMpujcBrROzJmOkfQnkrwWbPBboKcUNK7dCvmNJOl463EwOgmooT+p7J5RrbFE9yfliPyvi/DkmA0ZzepvKuRxld1FJDWj35KMnKPGUJb3IHbCNnMoI49ohgLt3c/k6XSF157yTR8Yt3qID8Ig5b2agiadq6CsoJvuVQm3t3gDGV/muZYqZZraKgoN6oDYEbhmgLYNyIALFjdIk90uaikvku7DRUMaeY+HxuDdUsap4LEMlHVNwQ6xJGdE1l9y+dm+36RSA8QOH9WM16eQAC+qvy9F5ZiSvn5xkDQszqyPbIYx4bQTDGZKFNZKm0xBRE22xvpgV6FlvpjJkQUGaVZ9P+NruB4YZx4yNTBfrpsMe4fA1nypm03Q4zNa5wSmSPwUgVJHPP6ez5DRucEUapUE3lMOU7mnGti4d+QTswVfBow95fv1PcEf3Oxv53sQaHV48dtw6MaU7BZU9gtuhvSW372GW19wDSGKAXvddhnmdAneUrbmxcsozBfLeMasMnUORZhwIPcpsePoaefFiS4aHxo9cDWAOIEE8rIfADJIcdfXD5Ar2yyJYh6qLlK7N3cVvCZsUDJpI7xWqvw6Brn3a4ohg/31eI1sQxANIyIv4gY48yvknlML8dNeJgcoSKp2dL7KfSDo55v4T8ziU7fPXctRWZIvdKl86/CV+xpt0pgjukxO//+1JASdVQpqBG+0t0u/tzm98XjVV1umMauhj5Ly7yYSp5W6pZZc2DIN5zKXYxDvKydT9DVbLerrKXYyg+ZDF30hGb+a256T8mp5/FRFMcmWNT5TUVh82qGA6yfBmTU3sx4f6sziZZsamLvOXaP3iC1zzimbJzcNWO4qhV1T18aN3Zik+1lX4D9/gzFcQmQCNniVM8N8tsfPk05uDRxW3mqOedqhMkKi6Z4rA2NZIFZnJ3gQ6UvrLYVCpF4EYr3m9Nzrv0JC4uTs/R5wpTE1LJ95VY4/i3VcG2wtdpgEKrL7zmjYVgD+Yme6dHcGSC1LJN4ZJzAK2TnOZWNRNYMC/GnKRbDtLLp3AnsSloQ+0J+rI8CsQwGa00omp0/FvlJh9qCTYXSlgq0DyYJ03KPREovSeFm0Jlu52AE2sLeeC+z8TSXaaQR9uUeO2YtYPoHFKcTUQ51O3IQbLlFnDCsDgUwuFPgLgsDA9P3LAQjCR9dJ6HRvzj2BbfXx2kANBrTAMS46QcQj+7ONyuw8TsacHE6PQ+L/jH/4D44CY/ZrKX/Bi8r0y7+X4hsSubF1235VT91UzG8SwcqgY6w7C2ZbueDd1xn1DTice4zUfVL3gD9TdLpvTsnmIPa/VEi6KFNF29Cxg+/L5HcuIEcFtH0kdpej4+DNFEQ+9r/GLB6zIvqkxe5AyhqINwAyc4bEPRS0M+EJ/6hrA/VLGbSmzxLIDghiIOPd/QGGvD+Ffd2F3BM1a6T/iEmPIFw5XHbNMd0XRGDhIuLFxFQ67NSgKxuKrWUg6rQ6yg4DTcc13iQi3FrS1BQioaAvieoV6upp/qEhVE9DvDAYl86no4UfQkCdbkpzGHxlrJFGUKKS1GgrskUAyL+cINLmmso0WjzQ1gQ283cbUrzsmMOQPeq9+NCEN3gltMyjxtBy6CJTXJSe9VEki9tcftcnnzcwfbkz5hbOyWOnh28jllny+1R3iltBcVfIcNthYetHFN0BSj7LpOY71ShMaqr/24iraZ9oOSVCSUZm6OuKZ1ylmuyRgl6ZXrA2e88wvk975KvoVjmw5QYHl9DKnPAq9vSvGR8c3sDe+5YuD8fD6nqb0bX62vJvfN85jam5aJ/KXWOnoKbNea7//cBz3vT1zHZ+ZKkxOe/DgsVWt2hsnb74SumgL24gEy9XPecqovpm+m3L4/W2P4BnwQ/2efEddGPV2rV6x5C66tLfcoaw/xU4ee2gqQpCjQrGg=";
+    const lock = document.getElementById('night-lock');
+    const content = document.getElementById('night-content');
+    const form = document.getElementById('night-form');
+    const input = document.getElementById('night-pass');
+    const err = document.getElementById('night-err');
+
+    async function decrypt(pass) {
+      const raw = Uint8Array.from(atob(PAYLOAD), c => c.charCodeAt(0));
+      const salt = raw.slice(0, 16), iv = raw.slice(16, 28), data = raw.slice(28);
+      const material = await crypto.subtle.importKey(
+        'raw', new TextEncoder().encode(pass.trim().toLowerCase()), 'PBKDF2', false, ['deriveKey']);
+      const key = await crypto.subtle.deriveKey(
+        { name: 'PBKDF2', salt, iterations: 250000, hash: 'SHA-256' },
+        material, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+      const buf = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, data);
+      return new TextDecoder().decode(buf);
+    }
+
+    async function tryUnlock(pass, silent) {
+      try {
+        if (!window.crypto || !crypto.subtle) throw new Error('nocrypto');
+        const html = await decrypt(pass);
+        content.innerHTML = html;
+        content.hidden = false;
+        lock.hidden = true;
+        try { sessionStorage.setItem('nightPass', pass); } catch (e) {}
+        return true;
+      } catch (e) {
+        if (!silent) {
+          err.textContent = (e && e.message === 'nocrypto')
+            ? 'Your browser blocked the unlock. Try opening the site over https in Safari or Chrome.'
+            : "That passcode didn't work. Try again.";
+          err.hidden = false;
+        }
+        return false;
+      }
+    }
+
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      err.hidden = true;
+      tryUnlock(input.value, false);
+    });
+
+    try {
+      const saved = sessionStorage.getItem('nightPass');
+      if (saved) tryUnlock(saved, true);
+    } catch (e) {}
+  })();
 </script>
 
 </body>
