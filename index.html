@@ -349,7 +349,9 @@
     <button class="tab-btn" data-tab="bach">Bachelorette</button>
     <button class="tab-btn" data-tab="rehearsal">Rehearsal Dinner</button>
     <button class="tab-btn" data-tab="wedding">Wedding Day</button>
+    <!-- Wedding Night tab: hidden until 2027
     <button class="tab-btn" data-tab="night">Wedding Night</button>
+    -->
   </div>
 </nav>
 
@@ -598,7 +600,7 @@
     </div>
   </section>
 
-  <!-- WEDDING NIGHT (passcode protected, contents encrypted) -->
+  <!-- WEDDING NIGHT PANEL (passcode protected, contents encrypted). Hidden until 2027.
   <section class="panel" id="night">
     <div class="lock-card" id="night-lock">
       <h2 class="display">Wedding Night</h2>
@@ -611,6 +613,7 @@
     </div>
     <div id="night-content" hidden></div>
   </section>
+  -->
 
   <!-- YOUR ROLES -->
   <section class="panel" id="roles">
@@ -678,6 +681,7 @@
   });
 </script>
 
+<!-- WEDDING NIGHT SCRIPT: hidden until 2027
 <script>
   (function () {
     const PAYLOAD = "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";
@@ -731,6 +735,7 @@
     } catch (e) {}
   })();
 </script>
+-->
 
 </body>
 </html>
